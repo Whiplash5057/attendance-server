@@ -31,14 +31,40 @@ io.on('connection',function(socket) {
     });
     
 
-    socket.on('welcomeMsg', function(data) {
+    socket.on('faceID', function(data) {
         
-        let currentLive =  Object.keys(io.sockets.connected).length// connection count
-        var data = {
-            socketName: data.socketName,
-            currentLive: currentLive,
+        // let currentLive =  Object.keys(io.sockets.connected).length// connection count
+        // var data = {
+        //     socketName: data.socketName,
+        //     currentLive: currentLive,
+        // }
+        let employees = {
+            'employee1': {
+                name: 'employee1',
+                image: 'http://thefunnyplanet.com/pictures/12102.jpg'
+            },
+            'employee2': {
+                name: 'employee2',
+                image: 'http://thefunnyplanet.com/pictures/12102.jpg'
+            },
+            'employee3': {
+                name: 'employee3',
+                image: 'http://thefunnyplanet.com/pictures/12102.jpg'
+            },
+            'prasad': {
+                name: 'prasad',
+                image: 'http://thefunnyplanet.com/pictures/12102.jpg'
+            }
         }
-        io.sockets.emit('welcomeMsg', data);
+
+        console.log(data, 'innerData')
+        if(myObj.hasOwnProperty(data)){
+            console.log('Found')
+        } else {
+            console.log('Did not Find')
+        }
+        
+        // io.sockets.emit('welcomeMsg', data);
         
     });
 })
