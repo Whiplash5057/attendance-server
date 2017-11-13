@@ -1,4 +1,4 @@
-# WePaint- Server Side
+# Attendance- Server Side
 
 Click [to view the site](https://wepaint.herokuapp.com/)
 
